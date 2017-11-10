@@ -28,54 +28,78 @@ public class salon_premiun_form extends javax.swing.JFrame {
     private void initComponents() {
 
         btgTipo = new javax.swing.ButtonGroup();
-        jButton1 = new javax.swing.JButton();
-        jdtFecha = new com.toedter.calendar.JDateChooser();
+        btGuardar = new javax.swing.JButton();
         lblFecha = new javax.swing.JLabel();
         lblTipo = new javax.swing.JLabel();
-        rdbTipo1 = new javax.swing.JRadioButton();
-        rdbTipo2 = new javax.swing.JRadioButton();
         lblNumpersonas = new javax.swing.JLabel();
         txtNumpersonas = new javax.swing.JTextField();
+        dtcFecha = new com.toedter.calendar.JDateChooser();
+        lblTipococina = new javax.swing.JLabel();
+        cbTipococina = new javax.swing.JComboBox<>();
+        jSeparator1 = new javax.swing.JSeparator();
+        lblJornadas = new javax.swing.JLabel();
+        lblHabitacionesasistentes = new javax.swing.JLabel();
+        txtNumjornadas = new javax.swing.JTextField();
+        chkHabitacionesasistentes = new javax.swing.JCheckBox();
+        cbTipo = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("jButton1");
+        btGuardar.setText("Guardar");
 
         lblFecha.setText("Fecha del evento:");
 
         lblTipo.setText("Tipo:");
 
-        btgTipo.add(rdbTipo1);
-        rdbTipo1.setText("jRadioButton1");
-
-        btgTipo.add(rdbTipo2);
-        rdbTipo2.setText("jRadioButton1");
-
         lblNumpersonas.setText("Nº de personas:");
+
+        lblTipococina.setText("Tipo de cocina:");
+
+        cbTipococina.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        lblJornadas.setText("Nº de jornadas");
+
+        lblHabitacionesasistentes.setText("¿Habitaciones para asistentes?");
+
+        chkHabitacionesasistentes.setText("jCheckBox1");
+
+        cbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(428, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(16, 16, 16))
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(rdbTipo1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(rdbTipo2))
-                        .addComponent(lblTipo)
-                        .addComponent(lblFecha)
-                        .addComponent(jdtFecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(txtNumpersonas, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblNumpersonas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txtNumjornadas, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblJornadas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblHabitacionesasistentes)
+                            .addComponent(chkHabitacionesasistentes))
+                        .addGap(0, 142, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(cbTipo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblTipo, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblFecha, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtNumpersonas, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblNumpersonas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(dtcFecha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                            .addComponent(lblTipococina, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbTipococina, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSeparator1))
+                        .addGap(16, 16, 16))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,20 +107,32 @@ public class salon_premiun_form extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addComponent(lblFecha)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jdtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(dtcFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7)
                 .addComponent(lblTipo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rdbTipo1)
-                    .addComponent(rdbTipo2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
                 .addComponent(lblNumpersonas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtNumpersonas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(18, 18, 18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblTipococina)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cbTipococina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblJornadas)
+                    .addComponent(lblHabitacionesasistentes))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNumjornadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(chkHabitacionesasistentes))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btGuardar)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
@@ -138,14 +174,20 @@ public class salon_premiun_form extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btGuardar;
     private javax.swing.ButtonGroup btgTipo;
-    private javax.swing.JButton jButton1;
-    private com.toedter.calendar.JDateChooser jdtFecha;
+    private javax.swing.JComboBox<String> cbTipo;
+    private javax.swing.JComboBox<String> cbTipococina;
+    private javax.swing.JCheckBox chkHabitacionesasistentes;
+    private com.toedter.calendar.JDateChooser dtcFecha;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblFecha;
+    private javax.swing.JLabel lblHabitacionesasistentes;
+    private javax.swing.JLabel lblJornadas;
     private javax.swing.JLabel lblNumpersonas;
     private javax.swing.JLabel lblTipo;
-    private javax.swing.JRadioButton rdbTipo1;
-    private javax.swing.JRadioButton rdbTipo2;
+    private javax.swing.JLabel lblTipococina;
+    private javax.swing.JTextField txtNumjornadas;
     private javax.swing.JTextField txtNumpersonas;
     // End of variables declaration//GEN-END:variables
 }
