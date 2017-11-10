@@ -5,6 +5,8 @@
  */
 package salon_premiun;
 
+import javax.swing.UIManager;
+
 /**
  *
  * @author Carlos
@@ -15,7 +17,21 @@ public class salon_premiun_form extends javax.swing.JFrame {
      * Creates new form salon_premiun_form
      */
     public salon_premiun_form() {
+
+        try {
+        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(salon_premiun_form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(salon_premiun_form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(salon_premiun_form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(salon_premiun_form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+
         initComponents();
+
     }
 
     /**
@@ -38,7 +54,6 @@ public class salon_premiun_form extends javax.swing.JFrame {
         cbTipococina = new javax.swing.JComboBox<>();
         jSeparator1 = new javax.swing.JSeparator();
         lblJornadas = new javax.swing.JLabel();
-        lblHabitacionesasistentes = new javax.swing.JLabel();
         txtNumjornadas = new javax.swing.JTextField();
         chkHabitacionesasistentes = new javax.swing.JCheckBox();
         cbTipo = new javax.swing.JComboBox<>();
@@ -59,9 +74,7 @@ public class salon_premiun_form extends javax.swing.JFrame {
 
         lblJornadas.setText("Nº de jornadas");
 
-        lblHabitacionesasistentes.setText("¿Habitaciones para asistentes?");
-
-        chkHabitacionesasistentes.setText("jCheckBox1");
+        chkHabitacionesasistentes.setText("¿Habitaciones para asistentes?");
 
         cbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -77,10 +90,8 @@ public class salon_premiun_form extends javax.swing.JFrame {
                             .addComponent(txtNumjornadas, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblJornadas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblHabitacionesasistentes)
-                            .addComponent(chkHabitacionesasistentes))
-                        .addGap(0, 142, Short.MAX_VALUE))
+                        .addComponent(chkHabitacionesasistentes)
+                        .addGap(0, 114, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(cbTipo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -123,9 +134,7 @@ public class salon_premiun_form extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblJornadas)
-                    .addComponent(lblHabitacionesasistentes))
+                .addComponent(lblJornadas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNumjornadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -141,37 +150,37 @@ public class salon_premiun_form extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(salon_premiun_form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(salon_premiun_form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(salon_premiun_form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(salon_premiun_form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new salon_premiun_form().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(salon_premiun_form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(salon_premiun_form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(salon_premiun_form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(salon_premiun_form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new salon_premiun_form().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btGuardar;
@@ -182,7 +191,6 @@ public class salon_premiun_form extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser dtcFecha;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblFecha;
-    private javax.swing.JLabel lblHabitacionesasistentes;
     private javax.swing.JLabel lblJornadas;
     private javax.swing.JLabel lblNumpersonas;
     private javax.swing.JLabel lblTipo;
