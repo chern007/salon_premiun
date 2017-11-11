@@ -15,7 +15,16 @@ public class Salon_premiun {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        //abrimos la interfaz en un hilo nuevo
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new salon_premiun_form().setVisible(true);
+            }
+        });
+        
+        
+        
     }
     
 }
