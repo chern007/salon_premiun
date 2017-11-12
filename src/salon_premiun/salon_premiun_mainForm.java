@@ -5,6 +5,11 @@
  */
 package salon_premiun;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import javax.swing.UIManager;
+
 /**
  *
  * @author Carlos
@@ -15,7 +20,24 @@ public class salon_premiun_mainForm extends javax.swing.JFrame {
      * Creates new form salon_premiun_mainForm
      */
     public salon_premiun_mainForm() {
+
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(salon_premiun_nuevoEvento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(salon_premiun_nuevoEvento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(salon_premiun_nuevoEvento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(salon_premiun_nuevoEvento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+
         initComponents();
+
+        //centramos el formulario para que aparezca en el centro
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
     }
 
     /**
@@ -27,18 +49,36 @@ public class salon_premiun_mainForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btNuevoEvento = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnMenu = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        mniEvento = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Salon Premiun");
         setResizable(false);
 
+        btNuevoEvento.setBackground(Color.RED);
+        btNuevoEvento.setText("Nuevo Evento");
+        btNuevoEvento.setToolTipText("Pulsa para crear un nuevo evento");
+        btNuevoEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btNuevoEventoActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/salon_image.png"))); // NOI18N
+
         mnMenu.setText("Nuevo Evento");
 
-        jMenuItem1.setText("Crear nuevo evento");
-        mnMenu.add(jMenuItem1);
+        mniEvento.setText("Crear nuevo evento");
+        mniEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniEventoActionPerformed(evt);
+            }
+        });
+        mnMenu.add(mniEvento);
 
         jMenuBar1.add(mnMenu);
 
@@ -48,54 +88,53 @@ public class salon_premiun_mainForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(430, 430, 430)
+                .addComponent(btNuevoEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(280, 280, 280)
+                .addComponent(btNuevoEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void mniEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniEventoActionPerformed
+
+        //abrimos la interfaz en un hilo nuevo
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new salon_premiun_nuevoEvento().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_mniEventoActionPerformed
+
+    
+    
+    private void btNuevoEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNuevoEventoActionPerformed
+        //abrimos la interfaz en un hilo nuevo
+        
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new salon_premiun_nuevoEvento().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_btNuevoEventoActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(salon_premiun_mainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(salon_premiun_mainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(salon_premiun_mainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(salon_premiun_mainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new salon_premiun_mainForm().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btNuevoEvento;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenu mnMenu;
+    private javax.swing.JMenuItem mniEvento;
     // End of variables declaration//GEN-END:variables
 }
