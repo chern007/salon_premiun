@@ -5,6 +5,8 @@
  */
 package salon_premiun;
 
+import java.net.URL;
+
 /**
  *
  * @author Carlos
@@ -15,23 +17,14 @@ public class Salon_premiun {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
-
-        /* Create and display the form */
+        
+        //abrimos la interfaz en un hilo nuevo
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new salon_premiun_form().setVisible(true);
+                new salon_premiun_mainForm().setVisible(true);
             }
-        });
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        });  
+
     }
     
 }
